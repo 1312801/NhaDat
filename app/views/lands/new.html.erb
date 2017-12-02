@@ -1,0 +1,55 @@
+<div class="row">
+  <div class="col-md-6">
+    <%= form_for @user do |f| %>
+    <%= render 'error_messages'%>
+    <p>THONG TIN CO BAN</p>
+
+      <%= f.label :title%>
+      <%= f.text_field :title %>
+
+      <%= f.label :Dientich %>
+      <%= f.text_field :Dientich %>
+
+      <%= f.label :TenDuAn %>
+      <%= f.email_field :TenDuAn %>
+
+      <%= f.label :TenChuDauTu %>
+      <%= f.text_field :TenChuDauTu %>
+
+      <%= f.label :Phuong %>
+      <%= f.text_field :Phuong %>
+
+      <%= f.label :ThanhPho %>
+      <%= f.text_field :ThanhPho %>
+
+      <%= f.label :Tinh %>
+      <%= f.text_field :Tinh %>
+
+      <%= f.label :DiaChi %>
+      <%= f.text_field :DiaChi %>
+    <p>THONG TIN MO TA</p>
+
+    <%= f.label :MoTa %>
+    <%= f.text_area :QuyMo %>
+
+    <p>THONG TIN KHAC</p>
+
+    <%= f.label :SoTang %>
+    <%= f.text_area :SoTang %>
+    
+    <%= f.label :SoPhongNgu %>
+    <%= f.text_area :SoPhongNgu %>
+
+    <p>HINH ANH</p>
+    <%= f.label :image %>
+    <%= f.file_field :image %>
+
+
+
+
+      <%= f.submit "Create my account", class: "btn btn-primary"%>
+    <% end %>
+
+  </div>
+
+</div>

@@ -1,0 +1,7 @@
+Vam:
+  name: Van Nguyen
+  email: dinhvan@example.com
+  address: Bien Hoa
+  country: Viet Nam
+  password_digest: <%= User.digest('password') %>
+

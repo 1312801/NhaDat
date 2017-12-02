@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Title: MyString
+  TenDuAn: MyString
+  TenChuDauTu: MyString
+  Gia: MyString
+  tien: MyString
+  Phuong: MyString
+  Quan: MyString
+  ThanhPho: MyString
+  Tinh: MyString
+  Dientich: MyString
+  string: MyString
+  DiaChi: MyString
+  QuyMo: MyString
+  SoTang: 1
+  SoPhongNgu: 1
+
+two:
+  Title: MyString
+  TenDuAn: MyString
+  TenChuDauTu: MyString
+  Gia: MyString
+  tien: MyString
+  Phuong: MyString
+  Quan: MyString
+  ThanhPho: MyString
+  Tinh: MyString
+  Dientich: MyString
+  string: MyString
+  DiaChi: MyString
+  QuyMo: MyString
+  SoTang: 1
+  SoPhongNgu: 1
