@@ -176,3 +176,282 @@ Migrating to CreateLands (20171202110954)
   [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(279088437195799245)[0m
   [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2017-12-03 08:34:04 +0700
+  [1m[35m (26.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#index as HTML
+  Rendering sessions/index.html.erb within layouts/application
+  Rendered sessions/index.html.erb within layouts/application (2.6ms)
+  [1m[36mUser Load (12.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (44.9ms)
+Completed 200 OK in 8467ms (Views: 8443.8ms | ActiveRecord: 14.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-12-03 08:34:37 +0700
+Processing by SessionsController#index as HTML
+  Rendering sessions/index.html.erb within layouts/application
+  Rendered sessions/index.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (2.2ms)
+Completed 200 OK in 131ms (Views: 129.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-12-03 08:34:40 +0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (87.7ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (2.6ms)
+Completed 200 OK in 127ms (Views: 118.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2017-12-03 08:34:42 +0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_error_messages.html.erb (0.7ms)
+  Rendered users/new.html.erb within layouts/application (68.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (2.0ms)
+Completed 200 OK in 110ms (Views: 95.8ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2017-12-03 08:35:18 +0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_error_messages.html.erb (0.8ms)
+  Rendered users/new.html.erb within layouts/application (20.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (2.1ms)
+Completed 200 OK in 51ms (Views: 49.0ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-12-03 08:35:41 +0700
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"o8r99fB8pW6PwdQpRODzYzFwhQ1/b5o0aWDHs8KEtGENC72dgnwFDPFiNMzPX+QAMw99cYSQt8Q1AqoOk6EdDw==", "user"=>{"name"=>"Van", "email"=>"dinhvan2804@gmail.com", "address"=>"306 QL 16", "number"=>"123456789", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "country"=>"AQ"}, "commit"=>"Create my account"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (1.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "dinhvan2804@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (11.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "address", "number", "created_at", "updated_at", "password_digest", "country") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Van"], ["email", "dinhvan2804@gmail.com"], ["address", "306 QL 16"], ["number", "123456789"], ["created_at", "2017-12-03 01:35:41.250491"], ["updated_at", "2017-12-03 01:35:41.250491"], ["password_digest", "$2a$10$/B8Nj0soWV9NZaTRFQB5ee1r/TXe9Ed9B7Lo3iIs4B2v6m2x9t1Me"], ["country", "AQ"]]
+  [1m[35m (22.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 190ms (ActiveRecord: 73.9ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2017-12-03 08:35:41 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (2.2ms)
+Completed 200 OK in 70ms (Views: 34.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/lands/new" for 127.0.0.1 at 2017-12-03 08:35:44 +0700
+Processing by LandsController#new as HTML
+  Rendering lands/new.html.erb within layouts/application
+  Rendered lands/new.html.erb within layouts/application (12.7ms)
+Completed 500 Internal Server Error in 46ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <div class="row">
+    2:   <div class="col-md-6">
+    3:     <%= form_for @user do |f| %>
+    4:     <%= render 'error_messages'%>
+    5:     <p>THONG TIN CO BAN</p>
+    6: 
+  
+app/views/lands/new.html.erb:3:in `_app_views_lands_new_html_erb__451488963201024361_70297028125200'
+Started GET "/lands/new" for 127.0.0.1 at 2017-12-03 08:35:59 +0700
+Processing by LandsController#new as HTML
+  Rendering lands/new.html.erb within layouts/application
+  Rendered lands/new.html.erb within layouts/application (3.5ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <div class="row">
+    2:   <div class="col-md-6">
+    3:     <%= form_for @land do |f| %>
+    4:     <%= render 'error_messages'%>
+    5:     <p>THONG TIN CO BAN</p>
+    6: 
+  
+app/views/lands/new.html.erb:3:in `_app_views_lands_new_html_erb__451488963201024361_70297021626480'
+Started GET "/users/1" for 127.0.0.1 at 2017-12-03 08:36:18 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (1.9ms)
+Completed 200 OK in 33ms (Views: 29.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/lands/new" for 127.0.0.1 at 2017-12-03 08:36:22 +0700
+Processing by LandsController#new as HTML
+  Rendering lands/new.html.erb within layouts/application
+  Rendered lands/new.html.erb within layouts/application (2.1ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <div class="row">
+    2:   <div class="col-md-6">
+    3:     <%= form_for @land do |f| %>
+    4:     <%= render 'error_messages'%>
+    5:     <p>THONG TIN CO BAN</p>
+    6: 
+  
+app/views/lands/new.html.erb:3:in `_app_views_lands_new_html_erb__451488963201024361_70297034822520'
+Started GET "/lands/new" for 127.0.0.1 at 2017-12-03 08:37:43 +0700
+Processing by LandsController#new as HTML
+  Rendering lands/new.html.erb within layouts/application
+  Rendered lands/new.html.erb within layouts/application (2.2ms)
+Completed 500 Internal Server Error in 58ms (ActiveRecord: 6.0ms)
+
+
+  
+ActionView::Template::Error (Missing partial lands/_error_messages, application/_error_messages with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/van/NhaDat/app/views"
+):
+    1: <div class="row">
+    2:   <div class="col-md-6">
+    3:     <%= form_for @land do |f| %>
+    4:     <%= render 'error_messages'%>
+    5:     <p>THONG TIN CO BAN</p>
+    6: 
+    7:       <%= f.label :title%>
+  
+app/views/lands/new.html.erb:4:in `block in _app_views_lands_new_html_erb__451488963201024361_70297030592000'
+app/views/lands/new.html.erb:3:in `_app_views_lands_new_html_erb__451488963201024361_70297030592000'
+Started GET "/lands/new" for 127.0.0.1 at 2017-12-03 08:37:55 +0700
+Processing by LandsController#new as HTML
+  Rendering lands/new.html.erb within layouts/application
+  Rendered lands/new.html.erb within layouts/application (9.4ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `title' for #<Land:0x00007fde99f84150>
+Did you mean?  Title
+               Title?
+               Title=):
+    4:     <p>THONG TIN CO BAN</p>
+    5: 
+    6:       <%= f.label :title%>
+    7:       <%= f.text_field :title %>
+    8: 
+    9:       <%= f.label :Dientich %>
+   10:       <%= f.text_field :Dientich %>
+  
+app/views/lands/new.html.erb:7:in `block in _app_views_lands_new_html_erb__451488963201024361_70297021306260'
+app/views/lands/new.html.erb:3:in `_app_views_lands_new_html_erb__451488963201024361_70297021306260'
+Started GET "/lands/new" for 127.0.0.1 at 2017-12-03 08:38:40 +0700
+Processing by LandsController#new as HTML
+  Rendering lands/new.html.erb within layouts/application
+  Rendered lands/new.html.erb within layouts/application (20.2ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (16.7ms)
+Completed 500 Internal Server Error in 95ms (ActiveRecord: 6.2ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"users"}, missing required keys: [:id]):
+    27:         <%= link_to "Dang ki ban dat",new_land_path %>
+    28:       </li>
+    29:       <li class="nav-item">
+    30:         <%= link_to current_user[:name],user_path,class: 'link-to-text-color' %>
+    31:       </li>
+    32:       <li class="nav-item">
+    33:         <%= link_to "Logout", session_path(current_user),method: :delete, class: 'link-to-text-color' %>
+  
+app/views/layouts/_header.html.erb:30:in `_app_views_layouts__header_html_erb__1045505150089469868_70297024903420'
+app/views/layouts/application.html.erb:12:in `_app_views_layouts_application_html_erb___348667179021936575_70297031497280'
+Started GET "/lands/new" for 127.0.0.1 at 2017-12-03 08:39:16 +0700
+Processing by LandsController#new as HTML
+  Rendering lands/new.html.erb within layouts/application
+  Rendered lands/new.html.erb within layouts/application (4.6ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (334.2ms)
+Completed 500 Internal Server Error in 375ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `current_user_path' for #<#<Class:0x00007fde9b2f8858>:0x00007fde9a6e8b08>
+Did you mean?  current_user
+               @current_user):
+    27:         <%= link_to "Dang ki ban dat",new_land_path %>
+    28:       </li>
+    29:       <li class="nav-item">
+    30:         <%= link_to current_user[:name],current_user_path,class: 'link-to-text-color' %>
+    31:       </li>
+    32:       <li class="nav-item">
+    33:         <%= link_to "Logout", session_path(current_user),method: :delete, class: 'link-to-text-color' %>
+  
+app/views/layouts/_header.html.erb:30:in `_app_views_layouts__header_html_erb__1045505150089469868_70297031774680'
+app/views/layouts/application.html.erb:12:in `_app_views_layouts_application_html_erb___348667179021936575_70297025293140'
+Started GET "/lands/new" for 127.0.0.1 at 2017-12-03 08:39:52 +0700
+Processing by LandsController#new as HTML
+  Rendering lands/new.html.erb within layouts/application
+  Rendered lands/new.html.erb within layouts/application (5.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (2.6ms)
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"users", :id=>nil}, missing required keys: [:id]):
+    27:         <%= link_to "Dang ki ban dat",new_land_path %>
+    28:       </li>
+    29:       <li class="nav-item">
+    30:         <%= link_to current_user[:name],user_path(@user),class: 'link-to-text-color' %>
+    31:       </li>
+    32:       <li class="nav-item">
+    33:         <%= link_to "Logout", session_path(current_user),method: :delete, class: 'link-to-text-color' %>
+  
+app/views/layouts/_header.html.erb:30:in `_app_views_layouts__header_html_erb__1045505150089469868_70297030318140'
+app/views/layouts/application.html.erb:12:in `_app_views_layouts_application_html_erb___348667179021936575_70297032506940'
+Started GET "/" for 127.0.0.1 at 2017-12-03 08:41:07 +0700
+Processing by SessionsController#index as HTML
+  Rendering sessions/index.html.erb within layouts/application
+  Rendered sessions/index.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (2.7ms)
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"users", :id=>nil}, missing required keys: [:id]):
+    27:         <%= link_to "Dang ki ban dat",new_land_path %>
+    28:       </li>
+    29:       <li class="nav-item">
+    30:         <%= link_to current_user[:name],user_path(@user),class: 'link-to-text-color' %>
+    31:       </li>
+    32:       <li class="nav-item">
+    33:         <%= link_to "Logout", session_path(current_user),method: :delete, class: 'link-to-text-color' %>
+  
+app/views/layouts/_header.html.erb:30:in `_app_views_layouts__header_html_erb__1045505150089469868_70297016941260'
+app/views/layouts/application.html.erb:12:in `_app_views_layouts_application_html_erb___348667179021936575_70297020128320'
+Started GET "/" for 127.0.0.1 at 2017-12-03 08:43:46 +0700
+Processing by SessionsController#index as HTML
+  Rendering sessions/index.html.erb within layouts/application
+  Rendered sessions/index.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (2.6ms)
+Completed 200 OK in 37ms (Views: 35.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/lands/new" for 127.0.0.1 at 2017-12-03 08:43:50 +0700
+Processing by LandsController#new as HTML
+  Rendering lands/new.html.erb within layouts/application
+  Rendered lands/new.html.erb within layouts/application (5.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (2.1ms)
+Completed 200 OK in 39ms (Views: 37.5ms | ActiveRecord: 0.3ms)
+
+
