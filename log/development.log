@@ -455,3 +455,78 @@ Processing by LandsController#new as HTML
 Completed 200 OK in 39ms (Views: 37.5ms | ActiveRecord: 0.3ms)
 
 
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "dinhvan2204@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "dinhvan2204@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "address", "number", "created_at", "updated_at", "password_digest", "country") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "van"], ["email", "dinhvan2204@gmail.com"], ["address", "556 HCM"], ["number", "01255351349"], ["created_at", "2017-12-03 04:57:37.880688"], ["updated_at", "2017-12-03 04:57:37.880688"], ["password_digest", "$2a$10$sDqtmstMDwB3RZqYcrcOSuzUMK9nAaBro.0Z2FShRjZeYch.qZDT."], ["country", "VN"]]
+  [1m[35m (9.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "vantan1104@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "address", "number", "created_at", "updated_at", "password_digest", "country") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Tan"], ["email", "vantan1104@gmail.com"], ["address", "37 HN"], ["number", "0913979345"], ["created_at", "2017-12-03 04:57:37.978127"], ["updated_at", "2017-12-03 04:57:37.978127"], ["password_digest", "$2a$10$GfjcWnAqOWRTtmuK1efw/eiOZJf4uYi8WKrX4P8/w3VxFCfpW.IKO"], ["country", "VN"]]
+  [1m[35m (11.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "longlong3937@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "address", "number", "created_at", "updated_at", "password_digest", "country") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Long"], ["email", "longlong3937@gmail.com"], ["address", "550 HCM"], ["number", "01247658687"], ["created_at", "2017-12-03 04:57:38.077307"], ["updated_at", "2017-12-03 04:57:38.077307"], ["password_digest", "$2a$10$vUz40dzWY.sZ2S.OJApT/eQfnbG7pdmVyyZqDFlBiVdArFcPa6bNC"], ["country", "VN"]]
+  [1m[35m (12.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "Sonnguyen2204@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "address", "number", "created_at", "updated_at", "password_digest", "country") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Son"], ["email", "sonnguyen2204@gmail.com"], ["address", "660 HCM"], ["number", "0989765353"], ["created_at", "2017-12-03 04:57:38.178155"], ["updated_at", "2017-12-03 04:57:38.178155"], ["password_digest", "$2a$10$zX0OJNffELYq3Z14uygAROUWC1rqnM9N7SzsaK3wplupXx22AWtzK"], ["country", "VN"]]
+  [1m[35m (12.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "Teodeptrai2020@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "address", "number", "created_at", "updated_at", "password_digest", "country") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Teo"], ["email", "teodeptrai2020@gmail.com"], ["address", "37 HCM"], ["number", "0930909898"], ["created_at", "2017-12-03 04:57:38.278097"], ["updated_at", "2017-12-03 04:57:38.278097"], ["password_digest", "$2a$10$YlBxBWgwkan7SzOXnsWjvuu5X9LiivFGnPEGpTrFiSdfEZJHaa0Y6"], ["country", "VN"]]
+  [1m[35m (12.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "Tungnui30303@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "address", "number", "created_at", "updated_at", "password_digest", "country") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Tung"], ["email", "tungnui30303@gmail.com"], ["address", "12 HCM"], ["number", "01255352345"], ["created_at", "2017-12-03 04:57:38.378228"], ["updated_at", "2017-12-03 04:57:38.378228"], ["password_digest", "$2a$10$/Rq08ihAF7da6suWco7u8uFJO9zM3GZQ4ck7KPR/4Pl9U3Jk.wXe."], ["country", "VN"]]
+  [1m[35m (11.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "Nhanvan1098@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "address", "number", "created_at", "updated_at", "password_digest", "country") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Nhan"], ["email", "nhanvan1098@gmail.com"], ["address", "10 HCM"], ["number", "0978123435"], ["created_at", "2017-12-03 04:57:38.477938"], ["updated_at", "2017-12-03 04:57:38.477938"], ["password_digest", "$2a$10$Zdw2/PxhRq0K2Qth7a07FO91lVcAovCfIR6no8IilTwBxkJH4JLPy"], ["country", "VN"]]
+  [1m[35m (12.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "Quanque2028@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "address", "number", "created_at", "updated_at", "password_digest", "country") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Quan"], ["email", "quanque2028@gmail.com"], ["address", "4 HCM"], ["number", "0991987678"], ["created_at", "2017-12-03 04:57:38.579130"], ["updated_at", "2017-12-03 04:57:38.579130"], ["password_digest", "$2a$10$BW7XwSRtWfZKsAu9YueRIOuMQ2fWdZgxsBVWrBpWTCfzApduw9U/."], ["country", "VN"]]
+  [1m[35m (11.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "ThuyNguyen3304@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "address", "number", "created_at", "updated_at", "password_digest", "country") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Thuy"], ["email", "thuynguyen3304@gmail.com"], ["address", "90 HCM"], ["number", "01235355666"], ["created_at", "2017-12-03 04:57:38.678060"], ["updated_at", "2017-12-03 04:57:38.678060"], ["password_digest", "$2a$10$ea3hpwKv6qRsHIuFVvh69uK8hZwOyggP22AmQT7dRn9r4TYyrbroC"], ["country", "VN"]]
+  [1m[35m (12.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "NhuNguyen3232@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "address", "number", "created_at", "updated_at", "password_digest", "country") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Nhu"], ["email", "nhunguyen3232@gmail.com"], ["address", "112 HCM"], ["number", "0919387956"], ["created_at", "2017-12-03 04:57:38.774897"], ["updated_at", "2017-12-03 04:57:38.774897"], ["password_digest", "$2a$10$7JfhMcjyb4wzs5W/s4ZCm./gWI5tNVT77KETpLqPp4PPugbkctdMG"], ["country", "VN"]]
+  [1m[35m (4.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (28.2ms)[0m  [1m[32mINSERT INTO "lands" ("TenDuAn", "TenChuDauTu", "Gia", "Phuong", "ThanhPho", "Tinh", "Dientich", "DiaChi", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["TenDuAn", "FLC GRAND HOTEL HẠ LONG"], ["TenChuDauTu", "Công ty Cổ phần Tập đoàn FLC"], ["Gia", ""], ["Phuong", " Hồng Hà"], ["ThanhPho", "Hạ Long"], ["Tinh", "Quảng Ninh"], ["Dientich", "2.240.000 m²"], ["DiaChi", "Cột số 3 - số 8, phường Hồng Hà, Hạ Long, Quảng Ninh"], ["created_at", "2017-12-03 04:57:38.799444"], ["updated_at", "2017-12-03 04:57:38.799444"]]
+  [1m[35m (28.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "lands" ("TenDuAn", "TenChuDauTu", "Gia", "Phuong", "ThanhPho", "Dientich", "DiaChi", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["TenDuAn", "PentStudio"], ["TenChuDauTu", " Công ty CP Tứ Hiệp Hồng Hà Dầu Khí"], ["Gia", ""], ["Phuong", " Phú Thượng"], ["ThanhPho", "Hà Nội"], ["Dientich", " 45-108m2"], ["DiaChi", "Lô B, số 699 Lạc Long Quân, phường Phú Thượng, quận Tây Hồ, Hà Nội"], ["created_at", "2017-12-03 04:57:38.859949"], ["updated_at", "2017-12-03 04:57:38.859949"]]
+  [1m[35m (6.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "lands" ("TenDuAn", "TenChuDauTu", "Gia", "Phuong", "ThanhPho", "Tinh", "Dientich", "DiaChi", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["TenDuAn", "The Sapphire Residence"], ["TenChuDauTu", "Tập đoàn Vàng bạc Đá quý DOJI"], ["Gia", ""], ["Phuong", " Hồng Gai"], ["ThanhPho", "Hạ Long"], ["Tinh", "Quảng Ninh"], ["Dientich", "7.647 m²"], ["DiaChi", "Đường Trần Quốc Nghiễn, phường Hồng Gai, TP. Hạ Long, Quảng Ninh"], ["created_at", "2017-12-03 04:57:38.870293"], ["updated_at", "2017-12-03 04:57:38.870293"]]
+  [1m[35m (8.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "lands" ("TenDuAn", "TenChuDauTu", "Gia", "Phuong", "ThanhPho", "Dientich", "DiaChi", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["TenDuAn", "Hồng Hà Eco City"], ["TenChuDauTu", "Tập đoàn Vàng bạc Đá quý DOJI"], ["Gia", "12.8 triệu/m²"], ["Phuong", "Thanh Trì"], ["ThanhPho", "Hà Nội"], ["Dientich", "167 m²"], ["DiaChi", "Xã Tứ Hiệp, Thanh Trì, Hà Nội"], ["created_at", "2017-12-03 04:57:38.881447"], ["updated_at", "2017-12-03 04:57:38.881447"]]
+  [1m[35m (8.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "lands" ("TenDuAn", "TenChuDauTu", "Gia", "Phuong", "ThanhPho", "Tinh", "Dientich", "DiaChi", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["TenDuAn", "Ocean Dunes"], ["TenChuDauTu", "Tập đoàn Rạng Đông"], ["Gia", "15 triệu/m²"], ["Phuong", "Phú Thủy"], ["ThanhPho", "Phan Thiết"], ["Tinh", "Bình Thuận"], ["Dientich", "620.000 m²"], ["DiaChi", "Phường Phú Thủy, Phan Thiết, Bình Thuận"], ["created_at", "2017-12-03 04:57:38.892723"], ["updated_at", "2017-12-03 04:57:38.892723"]]
+  [1m[35m (8.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "lands" ("TenDuAn", "TenChuDauTu", "Gia", "Phuong", "ThanhPho", "Dientich", "DiaChi", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["TenDuAn", "Hồ Gươm Plaza"], ["TenChuDauTu", "Công ty CP may Hồ Gươm - HOGARSCO"], ["Gia", "18.5 triệu/m²"], ["Phuong", "Hà Đông"], ["ThanhPho", "Hà Nội"], ["Dientich", "10.316 m²"], ["DiaChi", "Số 102-104 Trần Phú, KĐT Mộ Lao, Hà Đông, Hà Nội"], ["created_at", "2017-12-03 04:57:38.903641"], ["updated_at", "2017-12-03 04:57:38.903641"]]
+  [1m[35m (7.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "lands" ("TenDuAn", "TenChuDauTu", "Gia", "Phuong", "Quan", "ThanhPho", "Dientich", "DiaChi", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["TenDuAn", "Gold Land Bình Thạnh"], ["TenChuDauTu", ""], ["Gia", "18.5 triệu/m²"], ["Phuong", "13"], ["Quan", "Bình Thạnh"], ["ThanhPho", "Hồ Chí Minh"], ["Dientich", "10.316 m²"], ["DiaChi", "Phố Nguyễn Xí, Phường 13, Bình Thạnh, Hồ Chí Minh"], ["created_at", "2017-12-03 04:57:38.914668"], ["updated_at", "2017-12-03 04:57:38.914668"]]
+  [1m[35m (8.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "lands" ("TenDuAn", "TenChuDauTu", "Gia", "Phuong", "ThanhPho", "Dientich", "DiaChi", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["TenDuAn", "Thủ Đức Garden Homes"], ["TenChuDauTu", "Công ty TNHH Xây dựng - Trang trí Việt Quốc"], ["Gia", "17.5 triệu/m²"], ["Phuong", "Hiệp Bình Chánh"], ["ThanhPho", "Hồ Chí Minh"], ["Dientich", "150.000 m²"], ["DiaChi", "Phường Hiệp Bình Chánh, Thủ Đức, Hồ Chí Minh"], ["created_at", "2017-12-03 04:57:38.925874"], ["updated_at", "2017-12-03 04:57:38.925874"]]
+  [1m[35m (8.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "lands" ("TenDuAn", "TenChuDauTu", "Gia", "Phuong", "ThanhPho", "Dientich", "DiaChi", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["TenDuAn", "Hanhud Hoàng Quốc Việt"], ["TenChuDauTu", "Công ty CP Kinh doanh Phát triển nhà và Đô thị Hà Nội (HanHud)"], ["Gia", "27 triệu/m²"], ["Phuong", "Cổ Nhuế 1"], ["ThanhPho", "Hà Nội"], ["Dientich", "2.443 m²"], ["DiaChi", "Số 234 Hoàng Quốc Việt, phường Cổ Nhuế 1, Bắc Từ Liêm, Hà Nội"], ["created_at", "2017-12-03 04:57:38.937049"], ["updated_at", "2017-12-03 04:57:38.937049"]]
+  [1m[35m (8.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mLand Load (0.5ms)[0m  [1m[34mSELECT  "lands".* FROM "lands" LIMIT $1[0m  [["LIMIT", 11]]
