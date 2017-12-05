@@ -8,6 +8,16 @@ class LandsController < ApplicationController
   def show
     @land= Land.find(params[:id])
   end
+  def edit
+    @land= Land.find(params[:id])
+  end
+  def update
+    @land= Land.find(params[:id])
+    if @land.update(params.require(:land).permit(:tien))
+      flash[:success]="Ban dau gia thanh cong"
+      render 'show'
+    end
+  end
   def create
 @land=Land.new(land_params)
 if @land.save

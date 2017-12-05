@@ -1,19 +1,13 @@
 <%-#-%>
-<div class="row">
-  <div class="col-md-8">
   <% @lands.each do |land|%>
   <div class="card" style="width: 20rem;">
 <img class="card-img-top" src="..." alt="Card image cap">
 <div class="card-body">
-  <h4 class="card-title">Card title</h4>
-  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-  <%= link_to "Chi tiet",land_path ,class: "btn btn-primary"%>
+  <h4></h4>
+  <h4 class="card-title"><%= land.TenDuAn%></h4>
+  <h5><%= land.DiaChi%></h5>>
+  <p class="card-text"><%=truncate(land.QuyMo)%>.</p>
+  <%= link_to "Chi tiet",land_path(land) ,class: "btn btn-primary"%>
 </div>
 </div>
   <%end %>
-  </div>
-  <div class="col-md-4">
-
-  </div>
-
-</div>
