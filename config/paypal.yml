@@ -1,0 +1,14 @@
+
+ development: &sandbox
+   username: dinhvan2804_api1.gmail.com
+   password: PLQAX2UQRQQBMYYY
+   signature: ABKCayh4bsZU9o4g5AXgoCnFJjldAWomsjW0cg364LErIyqVgwE6NCw3
+   sandbox: true
+    test:
+   <<: *sandbox
+
+  production: &production
+   username: dinhvan2804_api1.gmail.com
+  password: <%= ENV["PASSWORD"] %>
+   signature: <%= ENV["SIGNATURE"] %>
+   sandbox: false

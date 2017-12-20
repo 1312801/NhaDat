@@ -10,10 +10,12 @@
 <p>Dia chi : <%= @land.DiaChi%></p>
 <p>Gia : <%=@land.Gia%></p>
 <p>Tien dau gia : <%=@land.tien%></p>
-<%=form_for @land do |f|%>
+<%=form_for @land , :method => :PATCH do |f| %>
 <%=f.label :Tien_dau_gia%>
-<%= f.number_field :tien, :class => 'text_field' %>
+<%= f.text_field :tien, :class => 'text_field' %>
 <%= f.submit "Nhap so tien",class: "btn btn-primary"%>
+
+<%= link_to "Them vao gio hang",line_items_path(land_id: @land.id),:method => :post, class: "btn btn-primary"%>
 <%end%>
   </div>
 </div>
@@ -25,7 +27,10 @@
 <%end%>
 <h4>THONG TIN KHAC</h4>
 <p>So tang : <%=@land.SoTang%></p>
-<p>So tang : <%=@land.SoPhongNgu%></p></br>
+<p>So phong ngu : <%=@land.SoPhongNgu%></p></br>
 <%if current_user%>
-<center><%= link_to "Chinh sua thong tin", edit_land_path, class: "btn btn-primary"%></center>
+<center>
+<%= link_to "Chinh sua thong tin", edit_land_path, class: "btn btn-primary"%>
+<%= link_to "Xoa bai viet", @land,method: :delete,data: { confirm: "Ban co chac khong?"}, class: "btn btn-primary"%>
+</center>
 <%end%>

@@ -27,7 +27,7 @@
         <%= link_to "Dang ki ban dat",new_land_path %>
       </li>
       <li class="nav-item">
-        <%= link_to current_user[:name],users_path,class: 'link-to-text-color' %>
+        <%= link_to current_user[:name],user_path(current_user),class: 'link-to-text-color' %>
       </li>
       <li class="nav-item">
         <%= link_to "Logout", session_path(current_user),method: :delete, class: 'link-to-text-color' %>

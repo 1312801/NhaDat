@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  
+
   def index
     @users= User.all
   end
@@ -11,14 +11,16 @@ class UsersController < ApplicationController
   def show
     @user= User.find(params[:id])
   end
-  
+  def edit
+    @user= User.find(params[:id])
+  end
   def create
     @user = User.new(user_params)
     #byebug
     if @user.save
-      log_in @user 
+      log_in @user
       flash[:success]="Welcome to our website"
-      redirect_to @user
+      redirect_to @user.paypal_url(user_path(@user))
     else
       render 'new'
     end
@@ -26,6 +28,8 @@ class UsersController < ApplicationController
 
   def destroy
   end
+
+
   private
   def user_params
     params.require(:user).permit(:name, :email, :address, :number, :password , :password_confirmation, :country)

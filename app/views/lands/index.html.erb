@@ -8,6 +8,9 @@
   <h5><%= land.DiaChi%></h5>>
   <p class="card-text"><%=truncate(land.QuyMo)%>.</p>
   <%= link_to "Chi tiet",land_path(land) ,class: "btn btn-primary"%>
+  <div class="actions">
+      <%= link_to "Add to Cart", line_items_path(land_id: land.id), :method => :post %>
+    </div>
 </div>
 </div>
   <%end %>

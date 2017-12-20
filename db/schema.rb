@@ -10,10 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171202110954) do
+ActiveRecord::Schema.define(version: 20171220041521) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "carts", force: :cascade do |t|
+    t.datetime "purchased_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "lands", force: :cascade do |t|
     t.string "Title"
@@ -33,6 +39,52 @@ ActiveRecord::Schema.define(version: 20171202110954) do
     t.integer "SoPhongNgu"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_lands_on_user_id"
+  end
+
+  create_table "line_items", force: :cascade do |t|
+    t.decimal "unit_price"
+    t.integer "quantity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "land_id"
+    t.bigint "cart_id"
+    t.index ["cart_id"], name: "index_line_items_on_cart_id"
+    t.index ["land_id"], name: "index_line_items_on_land_id"
+  end
+
+  create_table "order_transactions", force: :cascade do |t|
+    t.string "action"
+    t.integer "amount"
+    t.boolean "success"
+    t.string "authorization"
+    t.string "message"
+    t.text "params"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "payment_id"
+    t.index ["payment_id"], name: "index_order_transactions_on_payment_id"
+  end
+
+  create_table "payments", force: :cascade do |t|
+    t.datetime "expires_at"
+    t.datetime "purchased_at"
+    t.integer "quantity"
+    t.string "status"
+    t.datetime "deleted_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "express_token"
+    t.string "express_payer_id"
+    t.string "firstname"
+    t.string "lastname"
+    t.string "card_type"
+    t.date "card_expire_on"
+    t.date "card_expires_on"
+    t.bigint "cart_id"
+    t.string "ip_address"
+    t.index ["cart_id"], name: "index_payments_on_cart_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -46,4 +98,9 @@ ActiveRecord::Schema.define(version: 20171202110954) do
     t.string "country"
   end
 
+  add_foreign_key "lands", "users"
+  add_foreign_key "line_items", "carts"
+  add_foreign_key "line_items", "lands"
+  add_foreign_key "order_transactions", "payments"
+  add_foreign_key "payments", "carts"
 end
