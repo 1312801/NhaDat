@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171220041521) do
+ActiveRecord::Schema.define(version: 20180104085452) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,25 +21,48 @@ ActiveRecord::Schema.define(version: 20171220041521) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "lands", force: :cascade do |t|
-    t.string "Title"
-    t.string "TenDuAn"
-    t.string "TenChuDauTu"
-    t.string "Gia"
-    t.string "tien"
-    t.string "Phuong"
-    t.string "Quan"
-    t.string "ThanhPho"
-    t.string "Tinh"
-    t.string "Dientich"
-    t.string "string"
-    t.string "DiaChi"
-    t.string "QuyMo"
-    t.integer "SoTang"
-    t.integer "SoPhongNgu"
+  create_table "conversations", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "author_id"
+    t.integer "receiver_id"
+    t.index ["author_id"], name: "index_conversations_on_author_id"
+    t.index ["receiver_id"], name: "index_conversations_on_receiver_id"
+  end
+
+  create_table "houses", force: :cascade do |t|
+    t.string "title"
+    t.string "diachi"
+    t.string "gia"
+    t.string "dientich"
+    t.string "mota"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
+    t.index ["user_id"], name: "index_houses_on_user_id"
+  end
+
+  create_table "lands", force: :cascade do |t|
+    t.string "title"
+    t.string "tenduan"
+    t.string "tenchudautu"
+    t.string "gia"
+    t.string "tien"
+    t.string "phuong"
+    t.string "quan"
+    t.string "thanhpho"
+    t.string "tinh"
+    t.string "dientich"
+    t.string "string"
+    t.string "diachi"
+    t.string "quymo"
+    t.integer "sotang"
+    t.integer "sophongngu"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.date "datestart"
+    t.date "dateend"
     t.index ["user_id"], name: "index_lands_on_user_id"
   end
 
@@ -52,6 +75,19 @@ ActiveRecord::Schema.define(version: 20171220041521) do
     t.bigint "cart_id"
     t.index ["cart_id"], name: "index_line_items_on_cart_id"
     t.index ["land_id"], name: "index_line_items_on_land_id"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "user"
+    t.string "references"
+    t.bigint "conversation_id"
+    t.bigint "user_id"
+    t.string "picture"
+    t.index ["conversation_id"], name: "index_messages_on_conversation_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "order_transactions", force: :cascade do |t|
@@ -98,9 +134,12 @@ ActiveRecord::Schema.define(version: 20171220041521) do
     t.string "country"
   end
 
+  add_foreign_key "houses", "users"
   add_foreign_key "lands", "users"
   add_foreign_key "line_items", "carts"
   add_foreign_key "line_items", "lands"
+  add_foreign_key "messages", "conversations"
+  add_foreign_key "messages", "users"
   add_foreign_key "order_transactions", "payments"
   add_foreign_key "payments", "carts"
 end

@@ -1,54 +1,119 @@
+<%-#form cho dat-%>
+<a href="#" id="lands">Dang ki ban dat</a></br>
+<div id="lands" class="hidden">
 <div class="row">
   <div class="col-md-6">
     <%= form_for @land do |f| %>
     <p>THONG TIN CO BAN</p>
 
       <%= f.label :Title%>
-      <%= f.text_field :Title %>
+      <%= f.text_field :title %>
 
       <%= f.label :Dientich %>
-      <%= f.text_field :Dientich %>
+      <%= f.text_field :dientich %>
 
       <%= f.label :TenDuAn %>
-      <%= f.text_field :TenDuAn %>
+      <%= f.text_field :tenduan %>
 
       <%= f.label :TenChuDauTu %>
-      <%= f.text_field :TenChuDauTu %>
+      <%= f.text_field :tenchudautu %>
 
       <%= f.label :Phuong %>
-      <%= f.text_field :Phuong %>
+      <%= f.text_field :phuong %>
 
       <%= f.label :ThanhPho %>
-      <%= f.text_field :ThanhPho %>
+      <%= f.text_field :thanhpho %>
 
       <%= f.label :Tinh %>
-      <%= f.text_field :Tinh %>
+      <%= f.text_field :tinh %>
 
       <%= f.label :DiaChi %>
-      <%= f.text_field :DiaChi %>
+      <%= f.text_field :diachi %>
+
+      <%= f.label :DateStart%><br />
+      <%= f.date_select :datestart, :default => @datestart, :order => [:month, :day, :year] %>
+
+      <%= f.label :DateEnd %><br />
+    <%= f.date_select :dateend,:default => @dateend,:order => [:month, :day, :year]%>
     <p>THONG TIN MO TA</p>
 
     <%= f.label :MoTa %>
-    <%= f.text_area :QuyMo %>
+    <%= f.text_area :quymo %>
 
     <p>THONG TIN KHAC</p>
 
     <%= f.label :SoTang %>
-    <%= f.text_area :SoTang %>
+    <%= f.text_area :sotang %>
 
     <%= f.label :SoPhongNgu %>
-    <%= f.text_area :SoPhongNgu %>
+    <%= f.text_area :sophongngu %>
 
     <p>HINH ANH</p>
     <%= f.label :image %>
     <%= f.file_field :image %>
-
-
-
-
       <%= f.submit "Create my account", class: "btn btn-primary"%>
     <% end %>
 
   </div>
 
 </div>
+</div>
+<%-#form cho nha-%>
+<a href="#" id="houses">Dang ki ban nha</a>
+<div id="houses" class="hidden">
+<div class="row">
+  <div class="col-md-6">
+    <%= form_for @land do |f| %>
+    <p>THONG TIN CO BAN</p>
+
+      <%= f.label :Title%>
+      <%= f.text_field :title %>
+
+      <%= f.label :Dientich %>
+      <%= f.text_field :dientich %>
+      <%= f.label :DiaChi %>
+      <%= f.text_field :diachi %>
+
+      <%= f.label :DateStart%><br />
+      <%= f.date_select :datestart, :default => @datestart, :order => [:month, :day, :year] %>
+
+      <%= f.label :DateEnd %><br />
+    <%= f.date_select :dateend,:default => @dateend,:order => [:month, :day, :year]%>
+    <p>THONG TIN MO TA</p>
+
+    <%= f.label :MoTa %>
+    <%= f.text_area :quymo %>
+
+    <p>THONG TIN KHAC</p>
+
+    <%= f.label :SoTang %>
+    <%= f.text_area :sotang %>
+
+    <%= f.label :SoPhongNgu %>
+    <%= f.text_area :sophongngu %>
+
+    <p>HINH ANH</p>
+    <%= f.label :image %>
+    <%= f.file_field :image %>
+      <%= f.submit "Create my account", class: "btn btn-primary"%>
+    <% end %>
+
+  </div>
+
+</div>
+</div>
+
+<script>
+$(function() {
+  $('a#lands').click(function(event){
+    event.preventDefault();
+    $('div#lands').toggle();
+  });
+});
+$(function() {
+  $('a#houses').click(function(event){
+    event.preventDefault();
+    $('div#houses').toggle();
+  });
+});
+</script>

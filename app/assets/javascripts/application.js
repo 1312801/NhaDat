@@ -15,5 +15,6 @@
 //= require bootstrap
 //= require rails-ujs
 //= require turbolinks
+//= require private_pub
 //= require_tree .
 //= require chosen-jquery

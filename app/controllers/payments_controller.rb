@@ -19,6 +19,7 @@ class PaymentsController < ApplicationController
       #byebug
       if @payment.save!
         if @payment.purchase
+          UserMailer.succeed_email(current_user).deliver_now
           flash[:success]="Giao dich thanh cong"
           redirect_to payment_path(@payment)
         else

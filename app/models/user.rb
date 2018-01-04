@@ -9,6 +9,9 @@ class User < ApplicationRecord
   has_secure_password
   validates :password, presence: true, length: { minimum: 6 }
   validates :country, presence: true
+	has_many :authored_conversations, class_name: 'Conversation', foreign_key: 'author_id'
+has_many :received_conversations, class_name: 'Conversation', foreign_key: 'received_id'
+has_many :messages, dependent: :destroy
 def User.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
                                                   BCrypt::Engine.cost
@@ -19,20 +22,4 @@ def User.digest(string)
    c = ISO3166::Country[self.country]
    return c.translations[I18n.locale.to_s] || c.name
 end
-def paypal_url(return_url)
-	values = {
-	:business => 'xxxxxxxx@xxx.com',
-        :cmd => '_cart',
-	:upload => 1,
-	:return => return_url,
-	}
-	values.merge!({
-	"amount_1" => @user.id,
-	"item_name_1" => @user.name,
-	"quantity_1" => '1'
-	})
-         # For test transactions use this URL
-	"https://www.paypal.com/cgi-bin/webscr?&#8221" + values.to_query
- end
-
 end

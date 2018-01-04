@@ -20,7 +20,7 @@ class UsersController < ApplicationController
     if @user.save
       log_in @user
       flash[:success]="Welcome to our website"
-      redirect_to @user.paypal_url(user_path(@user))
+      redirect_to user_path(@user)
     else
       render 'new'
     end

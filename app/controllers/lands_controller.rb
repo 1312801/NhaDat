@@ -1,6 +1,6 @@
 class LandsController < ApplicationController
   def index
-    @lands=Land.all
+    @lands=Land.text_search(params[:query].to_s.downcase)
   end
   def new
     @land=Land.new
@@ -27,25 +27,28 @@ class LandsController < ApplicationController
   end
 
   def create
-@land=current_user.lands.build(land_params)
-if @land.save
-  session[:land_id]=@land.id
-  flash[:success]="Ban dang ki thanh cong"
-  redirect_to lands_path
-else
-  flash[:error]="Dang ki lai !!"
-  render 'new'
+    @land= Land.new(land_params)
+        @land.user = current_user
+        if @land.save
+       flash[:success] = 'Land was successfully created.'
+       redirect_to lands_path #=> or anything
+    else
+       flash[:error] = 'Land was not created successfully .'
+       redirect_to lands_path #=> or anything
+    end
 end
-  end
 
   def destroy
     Land.find(params[:id]).destroy
     flash[:success]= "Bai viet da duoc xoa"
     redirect_to lands_path
   end
+  def search
+  @lands = Land.search(params)
+end
   private
   def land_params
-    params.require(:land).permit(:TenDuAn, :TenChuDauTu, :Phuong, :Quan, :ThanhPho , :Tinh, :Dientich,:DiaChi,:SoPhongNgu,:SoTang)
+    params.require(:land).permit(:tenduan, :tenchudautu, :phuong, :quan, :thanhpho , :tinh, :dientich,:diachi,:sophongngu,:sotang,:datestart,:dateend)
 
   end
 end

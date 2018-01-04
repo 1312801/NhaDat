@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Xin chào <%= @user.name %></h1>
+    <h2>Bạn nhận được một tin nhắn</h2>
+
+
+    <p>
+      To see your message, just follow this link: <%= link_to "This",lands_url(@land) %>.
+    </p>
+    <p>Chúc quý khách một ngày tốt lành!</p>
+  </body>
+</html>

@@ -1,12 +1,21 @@
 <%-#-%>
+<h1>Nhà Đất</h1>
+
+<%= form_tag lands_path, method: :get do %>
+  <p>
+    <%= text_field_tag :query, params[:query] %>
+    <%= select_tag 'category', options_for_select(Land.all.map{|el| [el.tenduan, el.id]}), class: 'form-control'%>
+    <%= submit_tag "Search", tenduan: nil %>
+  </p>
+<% end %>
   <% @lands.each do |land|%>
   <div class="card" style="width: 20rem;">
 <img class="card-img-top" src="..." alt="Card image cap">
 <div class="card-body">
   <h4></h4>
-  <h4 class="card-title"><%= land.TenDuAn%></h4>
-  <h5><%= land.DiaChi%></h5>>
-  <p class="card-text"><%=truncate(land.QuyMo)%>.</p>
+  <h4 class="card-title"><%= land.tenduan%></h4>
+  <h5><%= land.diachi%></h5>>
+  <p class="card-text"><%=truncate(land.quymo)%>.</p>
   <%= link_to "Chi tiet",land_path(land) ,class: "btn btn-primary"%>
   <div class="actions">
       <%= link_to "Add to Cart", line_items_path(land_id: land.id), :method => :post %>

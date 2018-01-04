@@ -9,7 +9,7 @@
   </tr>
   <% for line_item in @cart.line_items %>
     <tr class="<%= cycle :odd, :even %>">
-      <td><%=h line_item.land.TenDuAn %></td>
+      <td><%=h line_item.land.tenduan %></td>
       <td class="qty"><%= line_item.quantity %></td>
       <td class="price"><%= number_to_currency(line_item.unit_price) %></td>
       <td class="price"><%= number_to_currency(line_item.full_price) %></td>
